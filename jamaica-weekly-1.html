@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Jamaica Weekly — 8 June 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Oswald:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1008;
+    --cream: #f5efe3;
+    --gold: #c8922a;
+    --green: #1b5e20;
+    --red: #b71c1c;
+    --rule: #2a1a0a;
+    --mid: #5a4a30;
+    --light-rule: #d4c4a0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #e8dcc8; font-family: 'Source Serif 4', Georgia, serif; color: var(--ink); }
+  .page { max-width: 1100px; margin: 24px auto; background: var(--cream); box-shadow: 0 4px 40px rgba(0,0,0,0.25); padding: 0 0 48px; }
+
+  /* MASTHEAD */
+  .masthead { border-bottom: 4px double var(--rule); padding: 28px 40px 18px; text-align: center; }
+  .masthead-top { display: flex; justify-content: space-between; align-items: center; font-family: 'Oswald', sans-serif; font-size: 11px; letter-spacing: 0.12em; color: var(--mid); text-transform: uppercase; margin-bottom: 6px; }
+  .paper-name { font-family: 'Playfair Display', Georgia, serif; font-size: 72px; font-weight: 900; line-height: 1; letter-spacing: -0.02em; color: var(--ink); display: block; }
+  .paper-name em { font-style: italic; color: var(--green); }
+  .paper-tagline { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: var(--mid); margin: 4px 0 10px; letter-spacing: 0.06em; }
+  .masthead-strip { display: flex; justify-content: space-between; align-items: center; border-top: 1.5px solid var(--rule); border-bottom: 1.5px solid var(--rule); padding: 5px 0; margin-top: 6px; font-family: 'Oswald', sans-serif; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid); }
+  .edition-badge { background: var(--green); color: #fff; padding: 2px 10px; font-family: 'Oswald', sans-serif; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; }
+  .alert-banner { background: var(--red); color: #fff; text-align: center; padding: 6px 40px; font-family: 'Oswald', sans-serif; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; }
+
+  /* SOURCE RIBBON */
+  .source-ribbon { background: #2a1a0a; color: #d4c4a0; text-align: center; padding: 5px 40px; font-family: 'Oswald', sans-serif; font-size: 9.5px; letter-spacing: 0.18em; text-transform: uppercase; }
+
+  /* LAYOUT */
+  .main-content { padding: 0 36px; }
+  .section-rule { display: flex; align-items: center; gap: 10px; margin: 20px 0 14px; }
+  .section-rule h2 { font-family: 'Oswald', sans-serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #fff; background: var(--rule); padding: 3px 14px; white-space: nowrap; }
+  .section-rule h2.green { background: var(--green); }
+  .section-rule h2.gold  { background: var(--gold); }
+  .section-rule h2.red   { background: var(--red); }
+  .section-rule h2.navy  { background: #0d2b52; }
+  .section-rule::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+
+  /* TYPE */
+  .kicker { font-family: 'Oswald', sans-serif; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); margin-bottom: 5px; display: block; }
+  .kicker.green { color: var(--green); }
+  .kicker.gold  { color: var(--gold); }
+  .kicker.navy  { color: #0d2b52; }
+  h3.headline { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 28px; line-height: 1.15; margin-bottom: 8px; color: var(--ink); }
+  h3.headline.large  { font-size: 34px; }
+  h3.headline.medium { font-size: 22px; }
+  h3.headline.small  { font-size: 17px; }
+  .deck { font-family: 'Playfair Display', serif; font-style: italic; font-size: 14px; color: var(--mid); margin-bottom: 10px; line-height: 1.45; }
+  .body-text { font-size: 14px; line-height: 1.7; color: #2a1a0a; }
+  .body-text p + p { margin-top: 8px; }
+  .source-tag { display: inline-block; font-family: 'Oswald', sans-serif; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mid); border: 1px solid var(--light-rule); padding: 1px 6px; margin-top: 6px; margin-right: 3px; }
+  .pullquote { border-left: 4px solid var(--gold); padding: 8px 16px; margin: 12px 0; font-family: 'Playfair Display', serif; font-style: italic; font-size: 16px; color: var(--ink); line-height: 1.5; }
+  hr.thin { border: none; border-top: 1px solid var(--light-rule); margin: 16px 0; }
+
+  /* GRIDS */
+  .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; padding-top: 18px; }
+  .hero-lead { border-right: 1px solid var(--light-rule); padding-right: 28px; }
+  .hero { border-bottom: 3px double var(--light-rule); padding-bottom: 22px; margin-bottom: 4px; }
+  .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; border-top: 1.5px solid var(--light-rule); padding-top: 18px; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; border-top: 1.5px solid var(--light-rule); padding-top: 18px; }
+  .col-item + .col-item { border-left: 1px solid var(--light-rule); padding-left: 24px; }
+  .two-col .col-item + .col-item { padding-left: 28px; }
+  .brief-item { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid var(--light-rule); }
+  .brief-item:last-child { border-bottom: none; }
+
+  /* PORTLAND BOX */
+  .portland-box { background: linear-gradient(135deg, #0a2e0f 0%, #1b5e20 100%); color: #e8f5e9; padding: 28px 32px; position: relative; overflow: hidden; }
+  .portland-box::before { content: 'PORTLAND'; position: absolute; right: -10px; top: 50%; transform: translateY(-50%) rotate(90deg); font-family: 'Playfair Display', serif; font-weight: 900; font-size: 110px; color: rgba(255,255,255,0.04); pointer-events: none; white-space: nowrap; }
+  .portland-box .section-label { font-family: 'Oswald', sans-serif; font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: #a5d6a7; margin-bottom: 14px; border-bottom: 1px solid rgba(165,214,167,0.3); padding-bottom: 8px; }
+  .portland-box h3.headline { color: #fff; }
+  .portland-box .deck { color: #c8e6c9; }
+  .portland-box .body-text { color: #dcedc8; font-size: 13.5px; }
+  .portland-box .kicker { color: #a5d6a7; }
+  .portland-box .source-tag { border-color: rgba(165,214,167,0.4); color: #a5d6a7; }
+  .portland-inner-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 28px; }
+  .portland-inner-grid .col-item + .col-item { border-left: 1px solid rgba(165,214,167,0.25); padding-left: 28px; }
+
+  /* BUSINESS BOX */
+  .business-box { background: #0d2b52; color: #e3eaf5; padding: 24px 32px; margin-top: 0; }
+  .business-box .section-label { font-family: 'Oswald', sans-serif; font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: #90caf9; margin-bottom: 14px; border-bottom: 1px solid rgba(144,202,249,0.25); padding-bottom: 8px; }
+  .business-box h3.headline { color: #fff; }
+  .business-box .deck { color: #bbdefb; }
+  .business-box .body-text { color: #cfe0f5; font-size: 13.5px; }
+  .business-box .kicker { color: #90caf9; }
+  .business-box .source-tag { border-color: rgba(144,202,249,0.35); color: #90caf9; }
+  .business-box .pullquote { border-color: #90caf9; color: #fff; }
+  .business-inner-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .business-inner-grid .col-item + .col-item { border-left: 1px solid rgba(144,202,249,0.2); padding-left: 28px; }
+
+  /* FOOTER */
+  .footer-rule { display: flex; align-items: center; gap: 14px; margin: 28px 36px 0; padding-top: 16px; border-top: 3px double var(--rule); font-family: 'Oswald', sans-serif; font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mid); }
+  .footer-rule span { flex: 1; }
+  .footer-center { text-align: center; }
+
+  @media (max-width: 768px) {
+    .paper-name { font-size: 40px; }
+    .hero-grid, .three-col, .two-col, .portland-inner-grid, .business-inner-grid { grid-template-columns: 1fr; }
+    .hero-lead { border-right: none; padding-right: 0; border-bottom: 1px solid var(--light-rule); padding-bottom: 18px; }
+    .col-item + .col-item { border-left: none !important; padding-left: 0 !important; border-top: 1px solid var(--light-rule); padding-top: 14px; }
+    .main-content { padding: 0 16px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <div class="masthead-top">
+      <span>Established 2026</span>
+      <span>🇯🇲 Serving Jamaica at Home &amp; Abroad 🇯🇲</span>
+      <span>Free · Weekly</span>
+    </div>
+    <span class="paper-name">The <em>Jamaica</em> Weekly</span>
+    <div class="paper-tagline">"Out of Many, One People — Out of Many, One Voice"</div>
+    <div class="masthead-strip">
+      <span>Vol. 1 · No. 1</span>
+      <span class="edition-badge">Week of 2–8 June 2026</span>
+      <span>Monday, 8 June 2026</span>
+    </div>
+  </div>
+
+  <div class="alert-banner">⚡ Blackout aftermath: NWC water crisis · FSC sends $500m to Government · NWA CEO search begins · Miss Universe Kingston crowned</div>
+  <div class="source-ribbon">Sources this edition — Jamaica Observer · Jamaica Gleaner · RJR News · JIS · IRIE FM · OUR · Travel Weekly · Travel &amp; Tour World · Caribbean National Weekly · Al Jazeera</div>
+
+  <div class="main-content">
+
+    <!-- ═══ NATIONAL HEADLINES ═══ -->
+    <div class="section-rule"><h2>National Headlines</h2></div>
+
+    <div class="hero">
+      <div class="hero-grid">
+
+        <!-- LEAD: BLACKOUT -->
+        <div class="hero-lead">
+          <span class="kicker">⚡ Energy Crisis</span>
+          <h3 class="headline large">Island Goes Dark: The Blackout, the Water Crisis — and the Questions That Remain</h3>
+          <div class="deck">A lightning-triggered grid collapse on June 5th cascaded into a water emergency — and a political reckoning over Jamaica's single point of failure.</div>
+          <div class="body-text">
+            <p>Jamaica's entire electricity grid went dark at approximately 9 p.m. on Friday, June 5th. The Jamaica Public Service Company (JPS) — the island's sole electricity provider — confirmed a complete system failure affecting all 690,000 customers across every parish. The company said lightning near a major Corporate Area substation simultaneously knocked out five transmission lines, triggering an unprecedented "cascading" shutdown of generation capacity island-wide.</p>
+            <p>JPS CEO Hugh Grant acknowledged at a Saturday press conference that the cascade was not something the company had anticipated or prepared for. Power was restored to roughly 550,000 customers — about 80 percent — by 6 a.m. Saturday, with full restoration confirmed at 6:30 a.m.</p>
+            <div class="pullquote">"We cannot continue to hold this nation hostage to a single point of failure." — Opposition Spokesman Ian Hayles, calling for NWC to move critical infrastructure to solar</div>
+            <p>But the knock-on effect on the National Water Commission (NWC) left approximately 65,000 water customers still without supply into Saturday. Opposition Water Spokesman Ian Hayles attacked the Government's failure to place NWC plants on solar backup, noting the same vulnerability was exposed during Hurricane Melissa. He is demanding a comprehensive energy resilience plan for the water sector within the current parliamentary session.</p>
+            <p>Energy Minister Daryl Vaz called the outage "unacceptable." Prime Minister Holness echoed that language. The Office of Utilities Regulation (OUR) requested a preliminary JPS report by Monday, June 8th. The Opposition also called for answers, with Spokesman Phillip Paulwell demanding full public accountability from government, JPS and the OUR.</p>
+          </div>
+          <span class="source-tag">Jamaica Gleaner</span>
+          <span class="source-tag">Jamaica Observer</span>
+          <span class="source-tag">RJR News</span>
+          <span class="source-tag">IRIE FM</span>
+          <span class="source-tag">OUR</span>
+          <span class="source-tag">Al Jazeera</span>
+        </div>
+
+        <!-- SECONDARY -->
+        <div class="hero-secondary">
+          <span class="kicker red">Security</span>
+          <h3 class="headline medium">Fire Guts JDF Barracks at Up Park Camp</h3>
+          <div class="body-text">
+            <p>A blaze tore through a soldier barracks building at Jamaica Defence Force headquarters, Up Park Camp, at 7:41 p.m. on the same Friday night as the blackout. Army sources told the Jamaica Gleaner the wooden structure housing ranks from sergeant to warrant officer was "a tinder box waiting on a match to strike" — severely dilapidated, with wiring strewn throughout. The JDF confirmed the fire was extinguished and has launched a probe.</p>
+          </div>
+          <span class="source-tag">Jamaica Gleaner</span>
+          <span class="source-tag">Jamaica Observer</span>
+          <span class="source-tag">IRIE FM</span>
+
+          <hr class="thin">
+
+          <span class="kicker green">Government</span>
+          <h3 class="headline small">NWA Searches for New CEO After 14-Year Hunter Era</h3>
+          <div class="body-text">
+            <p>The National Works Agency has officially advertised for a new chief executive officer, marking the end of Everton "EG" Hunter's 14-year tenure. A vacancy notice published Sunday invites applications closing June 19, 2026. The recruitment coincides with Government discussions on establishing a proposed One Road Authority, a Holness administration initiative to improve coordination and accountability across Jamaica's road network.</p>
+          </div>
+          <span class="source-tag">RJR News</span>
+          <span class="source-tag">Jamaica Observer</span>
+
+          <hr class="thin">
+
+          <span class="kicker">Health</span>
+          <h3 class="headline small">Deputy PM Chang Discloses Open-Heart Surgery</h3>
+          <div class="body-text">
+            <p>Deputy Prime Minister Dr Horace Chang revealed this week that he underwent open-heart surgery after a routine post-election medical check-up detected three blocked arteries. Chang said there were no prior warning signs. He is currently recovering.</p>
+          </div>
+          <span class="source-tag">Jamaica Gleaner, 7 June 2026</span>
+
+          <hr class="thin">
+
+          <span class="kicker gold">Diaspora</span>
+          <h3 class="headline small">New Integrated Diaspora Service Bridges Global Jamaicans</h3>
+          <div class="body-text">
+            <p>A new Integrated Diaspora Service connecting Jamaicans abroad to government services at home launched this week, with digital access as its centrepiece. GraceKennedy also confirmed its role as Legacy Partner in an upcoming diaspora engagement initiative.</p>
+          </div>
+          <span class="source-tag">Jamaica Observer, 8 June 2026</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ BUSINESS & FINANCE ═══ -->
+    <div class="section-rule"><h2 class="navy">Business &amp; Finance</h2></div>
+
+    <div class="business-box">
+      <div class="section-label">💼 Economy · Regulation · Markets</div>
+      <div class="business-inner-grid">
+        <div class="col-item">
+          <span class="kicker navy">Regulation</span>
+          <h3 class="headline medium" style="color:#fff;">Regulator Reveals $500m Was Sent to Government — Leaving FSC in the Red</h3>
+          <div class="deck" style="color:#bbdefb;">The Financial Services Commission's executive director has disclosed a half-billion-dollar transfer to the Government that has pushed the watchdog deep into deficit.</div>
+          <div class="body-text" style="color:#cfe0f5;">
+            <p>FSC Executive Director Lt Col Keron Burrell disclosed to the Senate's Regulations Committee this week that $500 million was transferred from the regulator's reserves to the Government under a directive from the Ministry of Finance. The revelation came as lawmakers pressed the FSC to explain why it had swung from recording surpluses to posting losses exceeding $500 million.</p>
+            <p>Burrell identified the transfer as one of three blows to the FSC's finances — alongside rising staff costs from public sector pay reforms and spending triggered by a major 2023 cyberattack. The FSC had projected a $165.67 million surplus for its March 2025 financial year but instead recorded a $502.4 million deficit. The watchdog, which regulates securities, insurance and pensions, is now seeking parliamentary approval to raise its fees to claw back ground.</p>
+            <div class="pullquote" style="border-color:#90caf9;color:#fff;">"What it did was it reduced the reserves that we have. In case we're making losses, the reserves are there to allow us to be a going concern for a longer period of time." — FSC Executive Director Lt Col Keron Burrell</div>
+            <p>Opposition Finance Spokesperson Julian Robinson has demanded a full government explanation for the withdrawal.</p>
+          </div>
+          <span class="source-tag" style="color:#90caf9;border-color:rgba(144,202,249,0.35);">Jamaica Observer, 5 June 2026</span>
+          <span class="source-tag" style="color:#90caf9;border-color:rgba(144,202,249,0.35);">RJR News, 8 June 2026</span>
+        </div>
+
+        <div class="col-item">
+          <span class="kicker navy">Business</span>
+          <h3 class="headline small" style="color:#fff;">Lasco Group Plans Major Expansion of Export Business</h3>
+          <div class="body-text" style="color:#cfe0f5;">
+            <p>The Lasco Group has announced plans to significantly expand its export operations, signalling ambitions to grow its footprint in regional and international markets. The group, which spans food, pharmaceutical and financial services, sees exports as a key growth driver heading into the latter half of 2026.</p>
+          </div>
+          <span class="source-tag" style="color:#90caf9;border-color:rgba(144,202,249,0.35);">RJR News, 8 June 2026</span>
+
+          <hr class="thin" style="border-color:rgba(144,202,249,0.2);margin:14px 0;">
+
+          <span class="kicker navy">Business</span>
+          <h3 class="headline small" style="color:#fff;">Pan Jamaica Group Reports Record 2025 Earnings</h3>
+          <div class="body-text" style="color:#cfe0f5;">
+            <p>Pan Jamaica Group has announced record earnings for 2025, bucking the headwinds that buffeted many sectors following Hurricane Melissa. The diversified investment group said the performance reflected strong returns across its portfolio, reinforcing confidence in its strategy ahead of 2026.</p>
+          </div>
+          <span class="source-tag" style="color:#90caf9;border-color:rgba(144,202,249,0.35);">RJR News, 8 June 2026</span>
+
+          <hr class="thin" style="border-color:rgba(144,202,249,0.2);margin:14px 0;">
+
+          <span class="kicker navy">Business</span>
+          <h3 class="headline small" style="color:#fff;">Jamaica Producers Group Posts Strong 2025 Financial Performance</h3>
+          <div class="body-text" style="color:#cfe0f5;">
+            <p>Jamaica Producers Group has also reported strong financial results for 2025. The agro-industrial conglomerate, with interests spanning food, logistics and leisure, credited disciplined operations and export revenue for its performance.</p>
+          </div>
+          <span class="source-tag" style="color:#90caf9;border-color:rgba(144,202,249,0.35);">RJR News, 8 June 2026</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ PORTLAND FOCUS ═══ -->
+    <div class="section-rule" style="margin-top:22px;"><h2 class="green">Portland Focus</h2></div>
+
+    <div class="portland-box">
+      <div class="section-label">🌿 The Parish of Portland — Port Antonio &amp; Beyond</div>
+      <div class="portland-inner-grid">
+        <div class="col-item">
+          <span class="kicker green">Tourism &amp; Access</span>
+          <h3 class="headline large" style="color:#fff;">Video Crushes False Claims: Jamaicans ARE Welcome at Blue Lagoon</h3>
+          <div class="deck" style="color:#c8e6c9;">A newly circulated social media video showing locals freely enjoying Portland's world-famous attraction has directly challenged a long-running narrative of exclusion.</div>
+          <div class="body-text" style="color:#dcedc8;">
+            <p>A long-running claim that Jamaican nationals are denied access to the iconic Blue Lagoon in Portland was publicly challenged this week after a video showed local residents enjoying the attraction without restriction. The Jamaica Observer reported on June 8th that the footage, whose narrator appeared sympathetic to beach-access advocates, paradoxically undermined the very narrative it set out to support.</p>
+            <p>The Blue Lagoon, renowned for the extraordinary mix of cold freshwater springs and Caribbean seawater that produces its signature deep-blue colour, had also been closed for a rehabilitation period earlier in 2026, with a reopening around June 1st anticipated. The new footage confirms it is once again open and welcoming visitors.</p>
+          </div>
+          <span class="source-tag" style="color:#a5d6a7;border-color:rgba(165,214,167,0.4);">Jamaica Observer, 8 June 2026</span>
+
+          <hr class="thin" style="border-color:rgba(165,214,167,0.2);margin:14px 0;">
+
+          <span class="kicker green">Pageant</span>
+          <h3 class="headline small" style="color:#fff;">Portland Crowns Its First Miss Universe Jamaica Parish Queen</h3>
+          <div class="body-text" style="color:#dcedc8;">
+            <p>Twenty-five-year-old executive manager Celene Hall was crowned Miss Universe Jamaica Portland 2026 at Hotel Tim Bamboo in Port Antonio — the very first parish-level queen under the competition's new national format. Hall beat out 11 other contestants and advances automatically to the national finals scheduled for August 23rd at AC Hotel Kingston. First runner-up Alyssa Francis also earned an automatic national finals spot.</p>
+          </div>
+          <span class="source-tag" style="color:#a5d6a7;border-color:rgba(165,214,167,0.4);">Jamaica Gleaner</span>
+        </div>
+
+        <div class="col-item">
+          <span class="kicker green">Education</span>
+          <h3 class="headline medium" style="color:#fff;">Buff Bay Primary Tops 30 Schools to Win Portland Maths Quiz</h3>
+          <div class="body-text" style="color:#dcedc8;">
+            <p>Buff Bay Primary School has claimed the 2026 Portland Maths Quiz Competition title — its first ever — beating Norwich Primary in a tight final at the Social Development Commission's Portland office. This year's competition attracted a record 30 schools from across eastern and western Portland, the highest entry since the competition's 2017 launch. Organiser Kimberley Simpson McNeil said reasoning-task weaknesses identified in the competition are already being addressed with teachers. Plans are in place to extend the contest to high schools next year.</p>
+          </div>
+          <span class="source-tag" style="color:#a5d6a7;border-color:rgba(165,214,167,0.4);">Jamaica Gleaner · JIS · Ministry of Education</span>
+
+          <hr class="thin" style="border-color:rgba(165,214,167,0.2);margin:14px 0;">
+
+          <span class="kicker green">Agriculture</span>
+          <h3 class="headline small" style="color:#fff;">Portland Bee Farmers Brace for Worst Season in Years</h3>
+          <div class="body-text" style="color:#dcedc8; font-size:13px;">
+            <p>Honey producers in Portland are facing a deeply difficult season after a failed April honey flow left farmers seven weeks behind schedule. Portland Beekeepers' Association chair Courtney Walker told the Jamaica Observer there is currently "no honey at all" in the parish. Farmers are attempting their first reap of the year in June with low expectations — and with hurricane season now under way, even a tropical depression could prove catastrophic for what remains of the harvest.</p>
+          </div>
+          <span class="source-tag" style="color:#a5d6a7;border-color:rgba(165,214,167,0.4);">Jamaica Observer</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ TOURISM & TRAVEL NEWS ═══ -->
+    <div class="section-rule" style="margin-top:22px;"><h2 class="gold">Tourism &amp; Travel News</h2></div>
+
+    <div class="three-col">
+      <div class="col-item">
+        <span class="kicker gold">Strategy</span>
+        <h3 class="headline small">Bartlett Launches "10x10x10": 10 Million Visitors, US$10 Billion in a Decade</h3>
+        <div class="body-text">
+          <p>Tourism Minister Edmund Bartlett unveiled a landmark strategic vision in New York City on June 1st, targeting 10 million visitors and US$10 billion in tourism earnings over the next ten years. Dubbed "10x10x10," the initiative is backed by a US$5 billion hotel development pipeline, expanded airlift routes, and a "Tourism 3.0" framework — announced at the Caribbean Tourism Organization's Caribbean Week — focused on sustainability, workforce development and competitiveness. Jamaica will also host the CTO's Air Connectivity Summit in Kingston in February 2027.</p>
+        </div>
+        <span class="source-tag">Caribbean National Weekly, 1 June 2026</span>
+        <span class="source-tag">Travel Weekly, 6 June 2026</span>
+      </div>
+      <div class="col-item">
+        <span class="kicker gold">Award</span>
+        <h3 class="headline small">Jamaica Wins Caribbean Media Award for Best Social Media Campaign</h3>
+        <div class="body-text">
+          <p>Jamaica's tourism body was recognised with the Caribbean Media Award for Best Social Media Campaign at the CTO's Caribbean Week in New York, honouring its Love Island Influencers campaign. Officials say the digital-first strategy is already translating into arrivals — Jamaica welcomed over one million international visitors in the first quarter of 2026 alone, a milestone described by industry analysts as ahead of expectations and demonstrating the island's post-Melissa recovery momentum.</p>
+        </div>
+        <span class="source-tag">Travel &amp; Tour World, 5 June 2026</span>
+      </div>
+      <div class="col-item">
+        <span class="kicker gold">Development</span>
+        <h3 class="headline small">Tuff Gong Reopens; Sumfest Gets New Format; Royaltons Return This Summer</h3>
+        <div class="body-text">
+          <p>A cluster of tourism developments: Kingston's Tuff Gong International Studios reopened in March 2026 with modernised facilities while preserving Bob Marley's legacy. Reggae Sumfest — the Caribbean's premier festival — debuts a new one-night format at Plantation Cove on July 18th. On the accommodation front, Royalton Hideaway Negril and Royalton Negril reopen August 25th; Royalton Blue Waters properties follow September 15th. Floyd's Pelican Bar and Poko Loko Floating Bar have also resumed operations after storm damage.</p>
+        </div>
+        <span class="source-tag">Travel &amp; Tour World</span>
+        <span class="source-tag">TravelPulse</span>
+      </div>
+    </div>
+
+    <!-- ═══ SPORT ═══ -->
+    <div class="section-rule" style="margin-top:22px;"><h2>Sport</h2></div>
+
+    <div class="three-col">
+      <div class="col-item">
+        <span class="kicker red">Athletics</span>
+        <h3 class="headline small">Two More Jamaican Women Break the 11-Second Barrier</h3>
+        <div class="body-text">
+          <p>Sabrina Dockery and Jodean Williams joined an elite group of Jamaican women to run the 100m in under 11 seconds, posting standout performances at Saturday's U-series. Jaydon Hibbert also made his return to form with a 17.02-metre triple jump at the Rome Diamond League, speaking openly about how a training stint in Turkey helped him rebuild emotionally and physically after a difficult 2025.</p>
+        </div>
+        <span class="source-tag">Jamaica Observer</span>
+      </div>
+      <div class="col-item">
+        <span class="kicker">World Cup</span>
+        <h3 class="headline small">FIFA World Cup Kicks Off Thursday — JFF Eyes the Next Cycle</h3>
+        <div class="body-text">
+          <p>The 2026 FIFA World Cup, co-hosted across North America, begins on June 11th — exclusively broadcast on TVJ. Jamaica did not qualify. The JFF has already shifted focus to the next qualifying campaign. The Reggae Boys played a friendly against World Cup-bound South Africa in Pachuca, Mexico this weekend; striker Trevante Stewart was unavailable for selection.</p>
+        </div>
+        <span class="source-tag">Jamaica Observer · IRIE FM · TVJ</span>
+      </div>
+      <div class="col-item">
+        <span class="kicker gold">Pageant</span>
+        <h3 class="headline small">UWI Student Hannah Collings-Myers is Miss Universe Jamaica Kingston &amp; St Andrew</h3>
+        <div class="body-text">
+          <p>Twenty-year-old University of the West Indies student Hannah Collings-Myers was crowned the first ever Miss Universe Jamaica Kingston &amp; St Andrew on Saturday night. She and runners-up Tiyana Mowatt and Shaniece Douglas all advance automatically to the national finals in August. The competition uses a new parish-level preliminary format introduced this year across all 13 parishes.</p>
+        </div>
+        <span class="source-tag">Jamaica Observer, 7 June 2026</span>
+      </div>
+    </div>
+
+    <!-- ═══ IN BRIEF ═══ -->
+    <div class="section-rule" style="margin-top:22px;"><h2>In Brief</h2></div>
+
+    <div class="two-col">
+      <div class="col-item">
+        <div class="brief-item">
+          <span class="kicker">Manchester</span>
+          <h3 class="headline small">Father and Son Killed Execution-Style in New Forest</h3>
+          <div class="body-text"><p>Police identified a father and son shot dead execution-style in New Forest, Manchester on Friday morning. Detectives were processing the scene in the early hours. No arrests reported at time of publication.</p></div>
+          <span class="source-tag">Jamaica Observer</span>
+        </div>
+        <div class="brief-item">
+          <span class="kicker">Westmoreland</span>
+          <h3 class="headline small">Man Charged with Murder of Negril Restaurant Owner</h3>
+          <div class="body-text"><p>A 21-year-old Westmoreland man has been charged with murder in connection with the May 22nd killing of a Negril restaurant owner, police confirmed this week.</p></div>
+          <span class="source-tag">Jamaica Observer</span>
+        </div>
+        <div class="brief-item">
+          <span class="kicker gold">Entertainment</span>
+          <h3 class="headline small">Guinness Pull Up Returns June 20 · Popcaan to Perform Full Album Live</h3>
+          <div class="body-text"><p>Guinness Pull Up returns to Kingston on June 20th. Separately, Popcaan is set to perform his full <em>Nothing Without God</em> album live in Jamaica for the first time at the Ranny Williams Entertainment Centre — a landmark event for dancehall fans.</p></div>
+          <span class="source-tag">Jamaica Observer</span>
+        </div>
+      </div>
+      <div class="col-item">
+        <div class="brief-item">
+          <span class="kicker green">Government</span>
+          <h3 class="headline small">Holness Hands Over 27 Housing Lots in St Elizabeth</h3>
+          <div class="body-text"><p>Prime Minister Holness officially handed over 27 serviced housing lots to beneficiaries in Malvern, St. Elizabeth on June 4th, and commended the NHT for rapid Hurricane Melissa insurance payouts while urging private insurers to accelerate their own settlements.</p></div>
+          <span class="source-tag">JIS · Jamaica Observer</span>
+        </div>
+        <div class="brief-item">
+          <span class="kicker">Security</span>
+          <h3 class="headline small">Crime "an Emotional Burden" — Cop Who Was Once Held Hostage Speaks Out</h3>
+          <div class="body-text"><p>A senior officer once held hostage by prisoners spoke publicly about the psychological toll of crime on constabulary personnel and communities island-wide, calling for greater mental health support within the force.</p></div>
+          <span class="source-tag">Jamaica Observer, 8 June 2026</span>
+        </div>
+        <div class="brief-item">
+          <span class="kicker navy">Regulation</span>
+          <h3 class="headline small">Opposition Calls for CARICOM to Reject Glass Bottle Import Tariff</h3>
+          <div class="body-text"><p>CARICOM Trade Ministers are being urged to reject a proposed tariff on glass bottle imports, with Jamaica's Opposition warning the measure could drive up costs for local food and beverage producers who depend on imported glass packaging.</p></div>
+          <span class="source-tag">RJR News, 8 June 2026</span>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /main-content -->
+
+  <div class="footer-rule">
+    <span>© The Jamaica Weekly 2026</span>
+    <span class="footer-center">Jamaica Observer · Jamaica Gleaner · RJR News · JIS · IRIE FM · OUR · TVJ · Travel Weekly · Travel &amp; Tour World · Caribbean National Weekly · Al Jazeera</span>
+    <span style="text-align:right;">Next edition: 15 June 2026</span>
+  </div>
+
+</div>
+</body>
+</html>
