@@ -37,12 +37,14 @@
   .section-rule h2.gold  { background: var(--gold); }
   .section-rule h2.red   { background: var(--red); }
   .section-rule h2.navy  { background: #0d2b52; }
+  .section-rule h2.teal  { background: #00695c; }
   .section-rule::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
 
   .kicker { font-family: 'Oswald', sans-serif; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); margin-bottom: 5px; display: block; }
   .kicker.green { color: var(--green); }
   .kicker.gold  { color: var(--gold); }
   .kicker.navy  { color: #0d2b52; }
+  .kicker.teal  { color: #00695c; }
   h3.headline { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 28px; line-height: 1.15; margin-bottom: 8px; color: var(--ink); }
   h3.headline.large  { font-size: 34px; }
   h3.headline.medium { font-size: 22px; }
@@ -88,13 +90,26 @@
   .business-inner-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
   .business-inner-grid .col-item + .col-item { border-left: 1px solid rgba(144,202,249,0.2); padding-left: 28px; }
 
+  /* IN OTHER NEWS BOX */
+  .other-news-box { background: linear-gradient(135deg, #3e2000 0%, #6d3a00 100%); color: #fff8f0; padding: 28px 32px; position: relative; overflow: hidden; }
+  .other-news-box::before { content: '✦'; position: absolute; right: 32px; top: 24px; font-size: 80px; color: rgba(255,255,255,0.04); pointer-events: none; }
+  .other-news-box .section-label { font-family: 'Oswald', sans-serif; font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: #ffcc80; margin-bottom: 14px; border-bottom: 1px solid rgba(255,204,128,0.3); padding-bottom: 8px; }
+  .other-news-box h3.headline { color: #fff; }
+  .other-news-box .deck { color: #ffe0b2; }
+  .other-news-box .body-text { color: #fff3e0; font-size: 13.5px; }
+  .other-news-box .kicker { color: #ffcc80; }
+  .other-news-box .source-tag { border-color: rgba(255,204,128,0.35); color: #ffcc80; }
+  .other-news-box .brief-item { border-bottom-color: rgba(255,204,128,0.2); }
+  .other-news-inner-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+  .other-news-inner-grid .col-item + .col-item { border-left: 1px solid rgba(255,204,128,0.2); padding-left: 24px; }
+
   .footer-rule { display: flex; align-items: center; gap: 14px; margin: 28px 36px 0; padding-top: 16px; border-top: 3px double var(--rule); font-family: 'Oswald', sans-serif; font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mid); }
   .footer-rule span { flex: 1; }
   .footer-center { text-align: center; }
 
   @media (max-width: 768px) {
     .paper-name { font-size: 40px; }
-    .hero-grid, .three-col, .two-col, .portland-inner-grid, .business-inner-grid { grid-template-columns: 1fr; }
+    .hero-grid, .three-col, .two-col, .portland-inner-grid, .business-inner-grid, .other-news-inner-grid { grid-template-columns: 1fr; }
     .hero-lead { border-right: none; padding-right: 0; border-bottom: 1px solid var(--light-rule); padding-bottom: 18px; }
     .col-item + .col-item { border-left: none !important; padding-left: 0 !important; border-top: 1px solid var(--light-rule); padding-top: 14px; }
     .main-content { padding: 0 16px; }
@@ -120,7 +135,7 @@
   </div>
 
   <div class="alert-banner">🏥 KPH surgeries disrupted by ageing A/C · Rum declared economic powerhouse · Jamaicans shine at NCAA Championships · Portland school tops Jamaica</div>
-  <div class="source-ribbon">Sources this edition — Jamaica Observer · Jamaica Gleaner · JIS · IRIE FM · Olympics.com · Jamaica Observer</div>
+  <div class="source-ribbon">Sources — Jamaica Observer · Jamaica Gleaner · JIS · IRIE FM · TVJ · Olympics.com · Caribbean National Weekly</div>
 
   <div class="main-content">
 
@@ -133,12 +148,12 @@
         <div class="hero-lead">
           <span class="kicker red">Health Crisis</span>
           <h3 class="headline large">KPH Surgeries Paralysed by Failing Air Conditioning — Opposition Calls It a "Patch and Pray" Catastrophe</h3>
-          <div class="deck">Elective operations at Jamaica's busiest public hospital have been repeatedly cancelled due to a broken central A/C system — and the crisis is now stretching into a second week.</div>
+          <div class="deck">Elective operations at Jamaica's busiest public hospital have been repeatedly cancelled due to a broken central A/C system, and the crisis is stretching into a second week.</div>
           <div class="body-text">
-            <p>The central air-conditioning system serving two operating theatres at Kingston Public Hospital (KPH) has broken down, causing the cancellation and delay of elective surgeries across multiple specialties. The South East Regional Health Authority (SERHA) confirmed the disruption on Sunday, with KPH CEO Dwayne Francis issuing an apology to patients and their families.</p>
-            <p>Hospital management attributed the failure to the facility's ageing infrastructure — described as over 250 years old — and to the deterioration of critical components that are not readily available on the local market. Maintaining proper environmental conditions in operating theatres is essential to patient safety and infection control, KPH said, and without functioning A/C, surgeries cannot safely proceed.</p>
+            <p>The central air-conditioning system serving two operating theatres at Kingston Public Hospital (KPH) has broken down, causing the cancellation and delay of elective surgeries across multiple specialties. The South East Regional Health Authority (SERHA) confirmed the disruption on Sunday, with KPH CEO Dwayne Francis issuing a public apology to affected patients and their families.</p>
+            <p>Management attributed the failure to the facility's ageing infrastructure and to the deterioration of critical components not readily available on the local market. Maintaining proper environmental conditions in operating theatres is essential to patient safety and infection control — without functioning A/C, surgeries cannot safely proceed.</p>
             <div class="pullquote">"We are witnessing the same crisis, the same pattern and the same inadequate response. Surgeries are being cancelled. Lifesaving medical missions hang in the balance." — Opposition Health Spokesman Dr Morais Guy</div>
-            <p>Opposition Health Spokesman Dr Morais Guy — echoed by Dr Dayton Campbell — blasted the Government for what he called a systemic "patch and pray" approach to surgical infrastructure, noting that operating theatres at both KPH and the Bustamante Hospital for Children remain out of service due to recurring failures. The Government said plans to fix the units are "well advanced," with KPH assuring it will provide further updates.</p>
+            <p>Opposition Health Spokesman Dr Morais Guy blasted what he called a systemic "patch and pray" approach to surgical infrastructure, noting operating theatres at both KPH and the Bustamante Hospital for Children remain out of service due to recurring failures. The Government said repair plans are "well advanced."</p>
           </div>
           <span class="source-tag">Jamaica Gleaner, 14 June 2026</span>
           <span class="source-tag">Jamaica Observer, 15 June 2026</span>
@@ -148,17 +163,17 @@
           <span class="kicker gold">Industry</span>
           <h3 class="headline medium">State Minister: Jamaica's Rum Is an Economic Powerhouse — and Government Thinks "Much Bigger"</h3>
           <div class="body-text">
-            <p>State Minister for Industry, Investment and Commerce Delano Seiveright called this week for far greater recognition of Jamaica's rum industry as a strategic pillar of national development. Speaking at the West Indies Rum and Spirits Producers' Association reception in Kingston, Seiveright said rum exports generated approximately US$57 million in 2024 and touch every sector — agriculture, manufacturing, logistics, tourism and rural employment.</p>
-            <div class="pullquote" style="font-size:14px;">"When we look at rum we see agriculture, manufacturing, logistics, tourism, export earnings, intellectual property, rural livelihoods. Rum is one of the few products that tells Jamaica's story every time it is poured anywhere in the world." — State Minister Delano Seiveright</div>
+            <p>State Minister for Industry, Investment and Commerce Delano Seiveright called this week for greater recognition of Jamaica's rum industry as a strategic pillar of national development. Speaking at the West Indies Rum and Spirits Producers' Association reception in Kingston, Seiveright noted rum exports generated approximately US$57 million in 2024 and touch every sector — agriculture, manufacturing, logistics, tourism and rural employment.</p>
+            <div class="pullquote" style="font-size:13.5px;">"Rum is one of the few products that tells Jamaica's story every time it is poured anywhere in the world." — State Minister Delano Seiveright</div>
           </div>
           <span class="source-tag">Jamaica Observer, 15 June 2026</span>
 
           <hr class="thin">
 
           <span class="kicker green">Infrastructure</span>
-          <h3 class="headline small">MoBay Installs Automated Car Park in Push Towards Smart City Status</h3>
+          <h3 class="headline small">MoBay Installs Automated Car Park in Smart City Push</h3>
           <div class="body-text">
-            <p>Montego Bay has added an automated multi-storey car park, the latest step in the city's ambition to position itself as Jamaica's first smart city. The facility represents a significant upgrade to the city's urban management infrastructure as MoBay continues its post-Hurricane Melissa recovery and modernisation drive.</p>
+            <p>Montego Bay has added an automated multi-storey car park — the latest step in the city's ambition to position itself as Jamaica's first smart city, continuing its post-Hurricane Melissa modernisation drive.</p>
           </div>
           <span class="source-tag">Jamaica Observer, 15 June 2026</span>
 
@@ -167,7 +182,16 @@
           <span class="kicker">Justice</span>
           <h3 class="headline small">$680 Million in Judgment Debt Paid Out by Government in 2025/26</h3>
           <div class="body-text">
-            <p>Justice Minister Delroy Chuck disclosed this week that the Government paid out $680 million in judgment debt during fiscal year 2025/2026 to settle legal claims against the state — a figure Opposition critics say reflects chronic failures of governance and public administration that end up costing taxpayers.</p>
+            <p>Justice Minister Delroy Chuck disclosed that the Government paid $680 million in judgment debt during fiscal year 2025/2026 to settle legal claims against the state — a figure Opposition critics say reflects chronic governance failures that ultimately cost taxpayers.</p>
+          </div>
+          <span class="source-tag">Jamaica Observer</span>
+
+          <hr class="thin">
+
+          <span class="kicker green">Road Safety</span>
+          <h3 class="headline small">22 Killed in 22 Fatal Crashes in May — Year-to-Date Toll Passes 105</h3>
+          <div class="body-text">
+            <p>Twenty-two people were killed in 22 fatal road crashes during May 2026, according to the Island Traffic Authority. Jamaica's cumulative road fatality count has now surpassed 105 for the year as of May 22nd, renewing calls for urgent enforcement of speed limits and improved road conditions.</p>
           </div>
           <span class="source-tag">Jamaica Observer</span>
         </div>
@@ -181,30 +205,29 @@
       <div class="section-label">💼 Economy · Regulation · Markets</div>
       <div class="business-inner-grid">
         <div class="col-item">
-          <span class="kicker navy">Renewable Energy</span>
+          <span class="kicker navy">Energy</span>
           <h3 class="headline medium" style="color:#fff;">Energy Expert: Jamaica Can Achieve Over 90% Renewables — "Breaking the Grid"</h3>
-          <div class="deck" style="color:#bbdefb;">A landmark energy lecture at the Jamaica Conference Centre has set out a bold blueprint for transforming the island's electricity system away from fossil fuels.</div>
+          <div class="deck" style="color:#bbdefb;">A landmark lecture at the Jamaica Conference Centre has laid out a bold blueprint for transforming the island's electricity system away from fossil fuels.</div>
           <div class="body-text" style="color:#cfe0f5;">
-            <p>Dr Ramón Méndez Galain, speaking at the annual Maurice Facey Lecture Series at the Jamaica Conference Centre under the theme <em>Breaking the Grid: Charting Jamaica's Path to Renewable Energy</em>, told an audience this week that Jamaica can realistically achieve more than 90 percent renewable energy in its electricity mix.</p>
-            <p>The lecture comes directly in the wake of the June 5th island-wide blackout and mounting Opposition calls for the National Water Commission to shift critical infrastructure onto solar power. Dr Méndez Galain's central argument was that the economic and security case for Jamaica to transition is now overwhelming — and that the technology exists to do it.</p>
+            <p>Dr Ramón Méndez Galain, speaking at the annual Maurice Facey Lecture Series under the theme <em>Breaking the Grid: Charting Jamaica's Path to Renewable Energy</em>, told an audience this week that Jamaica can realistically achieve more than 90 percent renewable energy in its electricity mix. The lecture came directly in the wake of the June 5th island-wide blackout and mounting calls for the NWC to shift critical infrastructure onto solar power — giving it immediate political and practical resonance.</p>
           </div>
-          <span class="source-tag" style="color:#90caf9;border-color:rgba(144,202,249,0.35);">Jamaica Gleaner, June 2026</span>
-        </div>
-
-        <div class="col-item">
-          <span class="kicker navy">Commerce</span>
-          <h3 class="headline small" style="color:#fff;">JCC Celebrates Businesses Driving Recovery and Resilience at 41st Annual Awards</h3>
-          <div class="body-text" style="color:#cfe0f5;">
-            <p>The Jamaica Chamber of Commerce held its 41st annual awards ceremony this week, celebrating businesses that have demonstrated outstanding recovery, resilience and growth — notably in the aftermath of Hurricane Melissa. The event recognised private sector leadership across multiple industries as the island continues its reconstruction efforts.</p>
-          </div>
-          <span class="source-tag" style="color:#90caf9;border-color:rgba(144,202,249,0.35);">Jamaica Observer, 15 June 2026</span>
+          <span class="source-tag" style="color:#90caf9;border-color:rgba(144,202,249,0.35);">Jamaica Gleaner</span>
 
           <hr class="thin" style="border-color:rgba(144,202,249,0.2);margin:14px 0;">
 
+          <span class="kicker navy">Commerce</span>
+          <h3 class="headline small" style="color:#fff;">JCC Celebrates Businesses Driving Recovery at 41st Annual Awards</h3>
+          <div class="body-text" style="color:#cfe0f5;">
+            <p>The Jamaica Chamber of Commerce held its 41st annual awards ceremony this week, celebrating businesses that demonstrated outstanding recovery and resilience — notably in the aftermath of Hurricane Melissa. The event recognised private sector leadership across multiple industries.</p>
+          </div>
+          <span class="source-tag" style="color:#90caf9;border-color:rgba(144,202,249,0.35);">Jamaica Observer, 15 June 2026</span>
+        </div>
+
+        <div class="col-item">
           <span class="kicker navy">Banking</span>
           <h3 class="headline small" style="color:#fff;">NCB to Relocate Falmouth Branch to Champion Plaza on July 6</h3>
           <div class="body-text" style="color:#cfe0f5;">
-            <p>National Commercial Bank Jamaica Limited (NCB) will relocate its Falmouth, Trelawny branch to Champion Plaza on July 6th, the bank announced this week. The move is part of ongoing branch network optimisation across the island.</p>
+            <p>National Commercial Bank Jamaica Limited will relocate its Falmouth, Trelawny branch to Champion Plaza on July 6th as part of its ongoing branch network optimisation across the island.</p>
           </div>
           <span class="source-tag" style="color:#90caf9;border-color:rgba(144,202,249,0.35);">Jamaica Observer, 5 June 2026</span>
 
@@ -213,9 +236,18 @@
           <span class="kicker navy">Development</span>
           <h3 class="headline small" style="color:#fff;">US$15.5 Million Rogers Commercial Centre Opens in Kingston</h3>
           <div class="body-text" style="color:#cfe0f5;">
-            <p>Ripton International Capital Holdings Limited has officially opened the Rogers Commercial Centre — a US$15.5 million mixed-use development in Kingston — marking one of the more significant private sector investments in the capital's commercial landscape this year.</p>
+            <p>Ripton International Capital Holdings Limited has officially opened the Rogers Commercial Centre — a US$15.5 million mixed-use development in Kingston — marking one of the more significant private sector capital investments in the capital this year.</p>
           </div>
           <span class="source-tag" style="color:#90caf9;border-color:rgba(144,202,249,0.35);">Jamaica Observer</span>
+
+          <hr class="thin" style="border-color:rgba(144,202,249,0.2);margin:14px 0;">
+
+          <span class="kicker navy">Fisheries</span>
+          <h3 class="headline small" style="color:#fff;">New Spiny Lobster Rules Now Being Enforced for 2026 Close Season</h3>
+          <div class="body-text" style="color:#cfe0f5;">
+            <p>The National Fisheries Authority has begun enforcing new spiny lobster regulations for the 2026 close season, introducing declaration, storage and monitoring requirements to protect stocks depleted by overfishing and climate-related habitat loss.</p>
+          </div>
+          <span class="source-tag" style="color:#90caf9;border-color:rgba(144,202,249,0.35);">Jamaica Gleaner</span>
         </div>
       </div>
     </div>
@@ -228,31 +260,30 @@
       <div class="portland-inner-grid">
         <div class="col-item">
           <span class="kicker green">Education</span>
-          <h3 class="headline large" style="color:#fff;">Portland's Cascade Primary Named Champion of Jamaica's School Nutrition Policy</h3>
-          <div class="deck" style="color:#c8e6c9;">A small school in western Portland has been singled out by the Health Minister as the best in the entire country for implementing the National School Nutrition Policy — out of more than 1,000 schools inspected.</div>
+          <h3 class="headline large" style="color:#fff;">Portland's Cascade Primary Named Jamaica's Champion School for Nutrition — Beating Over 1,000</h3>
+          <div class="deck" style="color:#c8e6c9;">A small school in western Portland has been singled out by the Health Minister as the best in the entire country for implementing the National School Nutrition Policy.</div>
           <div class="body-text" style="color:#dcedc8;">
-            <p>Cascade Primary and Infant School in western Portland has been commended by Health and Wellness Minister Dr Christopher Tufton as Jamaica's outstanding champion of the National School Nutrition Policy. Tufton visited the school in Buff Bay Valley this week and praised it as the first school in Jamaica — and one of only five nationwide — to fully implement the policy.</p>
-            <p>"Cascade Primary and Infant School is an exceptional school. You are leading the country today in the school nutrition policy," Tufton told students and staff. "This little school on the hill in Portland is a champion out of 1,000 schools." The ministry inspected 202 schools over the past year, with Cascade Primary coming out clearly ahead of all others.</p>
-            <p>The recognition is a major source of pride for western Portland, a community that has historically received less attention than the parish capital Port Antonio. The achievement also underscores the potential of smaller rural schools when given focused support and policy direction.</p>
+            <p>Cascade Primary and Infant School in Buff Bay Valley, western Portland, has been commended by Health and Wellness Minister Dr Christopher Tufton as Jamaica's outstanding champion of the National School Nutrition Policy. Visiting the school this week, Tufton praised it as the first in Jamaica — and one of only five nationwide — to fully implement the policy. Of 202 schools inspected over the past year, Cascade Primary came out clearly ahead.</p>
+            <p>"This little school on the hill in Portland is a champion out of 1,000 schools," Tufton told students and staff. The recognition is a significant source of pride for western Portland, a community that has historically received less public attention than the parish capital Port Antonio. The achievement also highlights the potential of rural schools when backed by focused policy support.</p>
           </div>
           <span class="source-tag" style="color:#a5d6a7;border-color:rgba(165,214,167,0.4);">Jamaica Observer, 15 June 2026</span>
           <span class="source-tag" style="color:#a5d6a7;border-color:rgba(165,214,167,0.4);">JIS</span>
         </div>
 
         <div class="col-item">
-          <span class="kicker green">Heritage</span>
-          <h3 class="headline medium" style="color:#fff;">Great Huts Eco-Resort Celebrates 25 Years on the Cliffs of Boston Bay</h3>
+          <span class="kicker green">Heritage &amp; Tourism</span>
+          <h3 class="headline medium" style="color:#fff;">Great Huts Marks 25 Years on the Cliffs of Boston Bay</h3>
           <div class="body-text" style="color:#dcedc8;">
-            <p>Great Huts, the celebrated eco-resort perched on the cliffs of Boston Bay in Portland, is this year marking its 25th anniversary. The property, which opened in 2000, has become one of Portland's most distinctive hospitality offerings — known for its African-inspired treehouses and cliff-top accommodation overlooking the Caribbean Sea. The milestone anniversary coincides with a strong tourism recovery period for the parish.</p>
+            <p>Great Huts, the celebrated eco-resort perched on the cliffs of Boston Bay in Portland, is this year marking its 25th anniversary. Opened in 2000, the property has become one of Portland's most distinctive hospitality offerings — known for its African-inspired treehouses and cliff-top accommodation overlooking the Caribbean Sea. The milestone coincides with a strong tourism recovery period for the parish following the Blue Lagoon's recent reopening.</p>
           </div>
           <span class="source-tag" style="color:#a5d6a7;border-color:rgba(165,214,167,0.4);">Jamaica Observer</span>
 
           <hr class="thin" style="border-color:rgba(165,214,167,0.2);margin:14px 0;">
 
-          <span class="kicker green">Environment</span>
+          <span class="kicker green">Diplomacy</span>
           <h3 class="headline small" style="color:#fff;">Water Minister Heads to Kenya as Jamaica Deepens Africa Ties</h3>
           <div class="body-text" style="color:#dcedc8; font-size:13px;">
-            <p>Minister of Water, Environment and Climate Change Matthew Samuda is travelling to Mombasa and Kilifi counties in Kenya this week, deepening Jamaica's growing bilateral engagement with African nations. Foreign Minister Senator Kamina Johnson Smith also announced this week that Jamaica and Ghana have renewed their formal cooperation agreement after more than two decades.</p>
+            <p>Minister of Water, Environment and Climate Change Matthew Samuda is travelling to Mombasa and Kilifi counties in Kenya this week. Foreign Minister Senator Kamina Johnson Smith also confirmed that Jamaica and Ghana have renewed their formal cooperation agreement after more than two decades — part of a broader strengthening of Jamaica's ties with African nations.</p>
           </div>
           <span class="source-tag" style="color:#a5d6a7;border-color:rgba(165,214,167,0.4);">Jamaica Observer, 15 June 2026</span>
         </div>
@@ -265,29 +296,76 @@
     <div class="three-col">
       <div class="col-item">
         <span class="kicker red">Athletics</span>
-        <h3 class="headline small">Shenese Walker Wins NCAA 100m Title — Three Jamaicans Win at Eugene Championships</h3>
+        <h3 class="headline small">Walker Wins NCAA 100m Gold — Three Jamaicans Take Titles at Hayward Field</h3>
         <div class="body-text">
-          <p>Jamaica's Shenese Walker of Florida State won the women's 100 metres title at the 2026 NCAA Division I Outdoor Championships at Hayward Field in Eugene, Oregon on Saturday, clocking 10.88 seconds. The Jamaica Observer reported that three Jamaicans won titles on the final day of the championships. Walker entered the final as an underdog to British Virgin Islands' Adaejah Hodge — who had set a collegiate record of 10.63 in qualifying — but delivered when it mattered most.</p>
+          <p>Jamaica's Shenese Walker of Florida State won the women's 100 metres title at the 2026 NCAA Division I Outdoor Championships in Eugene, Oregon on Saturday, clocking 10.88 seconds. She entered as an underdog to British Virgin Islands' Adaejah Hodge — who set a collegiate record of 10.63 in qualifying — but delivered in the final. The Jamaica Observer confirmed three Jamaicans won titles across the final day of competition at Hayward Field.</p>
         </div>
         <span class="source-tag">Jamaica Observer, 14 June 2026</span>
         <span class="source-tag">Olympics.com</span>
       </div>
       <div class="col-item">
         <span class="kicker">World Cup</span>
-        <h3 class="headline small">World Cup Week One: Germany, Brazil and England Win; Curacao Make History</h3>
+        <h3 class="headline small">World Cup Week One: Germany, Brazil Win; Curacao and Japan Impress on Debut</h3>
         <div class="body-text">
-          <p>The 2026 FIFA World Cup, broadcast exclusively on TVJ in Jamaica, has delivered an action-packed opening week. Germany hammered World Cup debutants Curacao — though the Caribbean side put up an early scare. Brazil drew 1-1 with Morocco, with Vinicius Jr scoring a brilliant equaliser. Japan twice came from behind to hold the Netherlands 2-2 in Group F. Jamaica did not qualify but fans are following closely via TVJ, with the tournament running until July 19th.</p>
+          <p>The 2026 FIFA World Cup, broadcast exclusively on TVJ in Jamaica, delivered a compelling opening week. Germany hammered debutants Curacao but faced an early scare. Brazil drew 1-1 with Morocco, Vinicius Jr. scoring a brilliant equaliser. Japan twice came from behind to hold the Netherlands 2-2 in Group F. Jamaica did not qualify but TVJ is carrying all matches through to the July 19th final.</p>
         </div>
         <span class="source-tag">Jamaica Observer, 15 June 2026</span>
         <span class="source-tag">TVJ</span>
       </div>
       <div class="col-item">
-        <span class="kicker gold">Entertainment</span>
-        <h3 class="headline small">Shaggy's Boombastic Goes 2x Platinum in New Zealand — 31 Years On</h3>
+        <span class="kicker green">Cricket</span>
+        <h3 class="headline small">Jamaica Kingsmen Return to CPL After Seven-Year Absence — Starting August 7</h3>
         <div class="body-text">
-          <p>Thirty-one years after its commercial release, Boombastic — the title track from Shaggy's third studio album — has been certified 2x platinum in New Zealand, the Jamaica Observer reported this week. The certification adds to Boombastic's existing platinum status in the United States and gold certifications in the United Kingdom, Canada, Sweden and Brazil, confirming the track's enduring global appeal.</p>
+          <p>The 2026 Caribbean Premier League gets under way on August 7th and runs to September 20th — with a landmark return: Jamaica Kingsmen are back in the tournament for the first time in seven years, confirmed in March 2026. Jamaica will host matches for the first time in seven years, ending a long absence from one of cricket's most celebrated domestic T20 competitions.</p>
         </div>
-        <span class="source-tag">Jamaica Observer, 15 June 2026</span>
+        <span class="source-tag">Wikipedia — 2026 Caribbean Premier League</span>
+      </div>
+    </div>
+
+    <!-- IN OTHER NEWS -->
+    <div class="section-rule" style="margin-top:22px;"><h2 class="teal">In Other News</h2></div>
+
+    <div class="other-news-box">
+      <div class="section-label">🎵 Music · Culture · Lifestyle · Entertainment</div>
+      <div class="other-news-inner-grid">
+
+        <div class="col-item">
+          <span class="kicker teal">Music</span>
+          <h3 class="headline medium" style="color:#fff;">Boombastic Goes 2x Platinum in New Zealand — 31 Years After Its Release</h3>
+          <div class="body-text" style="color:#fff3e0;">
+            <p>Thirty-one years after its commercial release, Boombastic — the title track from Shaggy's third studio album — has been certified 2x platinum in New Zealand. The track, which won Shaggy a Grammy in 1996, already holds platinum status in the United States and gold certifications in the UK, Canada, Sweden and Brazil. The latest certification underlines the song's extraordinary staying power across generations and continents — a timeless piece of Jamaican music history still finding new audiences.</p>
+          </div>
+          <span class="source-tag" style="color:#ffcc80;border-color:rgba(255,204,128,0.35);">Jamaica Observer, 15 June 2026</span>
+        </div>
+
+        <div class="col-item">
+          <span class="kicker teal">Music</span>
+          <h3 class="headline small" style="color:#fff;">Reggae Singer D'Yani Signs with UK Independent Powerhouse Lizard Records</h3>
+          <div class="body-text" style="color:#fff3e0;">
+            <p>Jamaican reggae singer D'Yani has secured what could be a career-defining deal after signing with UK-based independent label Lizard Records, giving him direct access to the UK market and European distribution. The signing is another example of the growing international appetite for Jamaican roots music.</p>
+          </div>
+          <span class="source-tag" style="color:#ffcc80;border-color:rgba(255,204,128,0.35);">Jamaica Observer</span>
+
+          <hr class="thin" style="border-color:rgba(255,204,128,0.2);margin:14px 0;">
+
+          <span class="kicker teal">History</span>
+          <h3 class="headline small" style="color:#fff;">History Made at Half Moon: First Jamaican Woman Named Managing Director</h3>
+          <div class="body-text" style="color:#fff3e0;">
+            <p>Shernette Crichton has made history at Half Moon resort in Montego Bay, becoming the first Jamaican and first woman appointed managing director of the iconic St James property — a landmark of Jamaica's luxury tourism sector for decades.</p>
+          </div>
+          <span class="source-tag" style="color:#ffcc80;border-color:rgba(255,204,128,0.35);">Jamaica Gleaner</span>
+        </div>
+
+        <div class="col-item">
+          <span class="kicker teal">Lifestyle</span>
+          <h3 class="headline small" style="color:#fff;">Seychella Beach Society Returns August 15 with Love Island-Inspired "Beach Becomes the Villa"</h3>
+          <div class="body-text" style="color:#fff3e0;">
+            <p>After drawing more than 1,500 patrons to its debut earlier this year — an event originally conceived as a small, invitation-only gathering — Seychella Beach Society is returning on August 15th at East Beach, St Mary. The theme this time is <em>The Beach Becomes The Villa</em>, inspired by the globally popular Love Island franchise, with immersive activations and curated entertainment. Produced by the team behind Scream, the Caribbean's largest Halloween event, Seychella is fast establishing itself as a fresh force on the Jamaican lifestyle calendar.</p>
+          </div>
+          <span class="source-tag" style="color:#ffcc80;border-color:rgba(255,204,128,0.35);">Jamaica Observer, 13 June 2026</span>
+          <span class="source-tag" style="color:#ffcc80;border-color:rgba(255,204,128,0.35);">Caribbean National Weekly, 11 June 2026</span>
+        </div>
+
       </div>
     </div>
 
@@ -298,41 +376,29 @@
       <div class="col-item">
         <div class="brief-item">
           <span class="kicker">St Elizabeth</span>
-          <h3 class="headline small">Deadly Family Dispute Shocks Stephenson Town, St Elizabeth</h3>
-          <div class="body-text"><p>A deadly family dispute in Stephenson Town, near Southfield in St Elizabeth on Saturday prompted a swift police response. The head of the parish division confirmed an investigation is under way. The incident follows a pattern of domestic violence-related fatalities that has drawn renewed calls for community intervention programmes across Jamaica.</p></div>
+          <h3 class="headline small">Deadly Family Dispute Shocks Stephenson Town</h3>
+          <div class="body-text"><p>A deadly family dispute in Stephenson Town, near Southfield in St Elizabeth on Saturday prompted a swift police response. An investigation is under way. The incident has renewed calls for community intervention programmes across the island.</p></div>
           <span class="source-tag">Jamaica Observer, 15 June 2026</span>
-        </div>
-        <div class="brief-item">
-          <span class="kicker green">Fisheries</span>
-          <h3 class="headline small">New Spiny Lobster Regulations Now Being Enforced for 2026 Close Season</h3>
-          <div class="body-text"><p>The National Fisheries Authority has begun enforcing new spiny lobster regulations for the 2026 close season, introducing declaration, storage and monitoring requirements. Legally harvested stock may still be consumed and traded. The crackdown is aimed at protecting stocks depleted by overfishing and climate-related habitat degradation.</p></div>
-          <span class="source-tag">Jamaica Gleaner</span>
         </div>
         <div class="brief-item">
           <span class="kicker green">Health</span>
           <h3 class="headline small">Minister Tufton Launches CARE Agenda Focused on the Elderly</h3>
-          <div class="body-text"><p>Health Minister Dr Christopher Tufton launched the first phase of his CARE Agenda this week with a focus on elderly Jamaicans, less than a month after the initiative was announced. The programme is designed to address gaps in healthcare access and social support for the island's ageing population.</p></div>
+          <div class="body-text"><p>Health Minister Dr Christopher Tufton launched the first phase of his CARE Agenda this week with a focus on elderly Jamaicans, less than a month after the initiative was announced, addressing gaps in healthcare access for the island's ageing population.</p></div>
           <span class="source-tag">Jamaica Observer</span>
         </div>
       </div>
       <div class="col-item">
         <div class="brief-item">
-          <span class="kicker">Road Safety</span>
-          <h3 class="headline small">22 Killed in 22 Fatal Crashes in May — Road Death Toll Passes 105</h3>
-          <div class="body-text"><p>Twenty-two people were killed in 22 fatal road crashes during May 2026, according to the Island Traffic Authority's latest monthly statistics. Jamaica's cumulative road fatality count has now surpassed 105 for the year to date as of May 22nd. Road safety advocates are renewing calls for urgent intervention, including better enforcement of speed limits and improved road conditions.</p></div>
-          <span class="source-tag">Jamaica Observer</span>
+          <span class="kicker green">Diplomacy</span>
+          <h3 class="headline small">Jamaica and Ghana Renew Formal Cooperation After Two Decades</h3>
+          <div class="body-text"><p>Foreign Minister Senator Kamina Johnson Smith announced that Jamaica and Ghana have renewed their formal bilateral cooperation agreement after more than twenty years, as part of Jamaica's broader deepening of ties with African nations.</p></div>
+          <span class="source-tag">Jamaica Observer, 15 June 2026</span>
         </div>
         <div class="brief-item">
-          <span class="kicker gold">Music</span>
-          <h3 class="headline small">Reggae Singer D'Yani Signs with UK Independent Powerhouse Lizard Records</h3>
-          <div class="body-text"><p>Jamaican reggae singer D'Yani has secured what could prove a career-defining deal after signing with UK-based independent label Lizard Records, known for launching internationally successful Caribbean artists. The signing gives D'Yani direct access to the UK market and European distribution networks.</p></div>
-          <span class="source-tag">Jamaica Observer</span>
-        </div>
-        <div class="brief-item">
-          <span class="kicker green">History</span>
-          <h3 class="headline small">Half Moon Resort Makes History — First Jamaican Woman Named Managing Director</h3>
-          <div class="body-text"><p>Shernette Crichton has made history at Half Moon resort in Montego Bay, becoming the first Jamaican and first woman to be appointed managing director of the iconic St James property. The appointment marks a significant milestone for the resort, which has been a landmark of Jamaica's luxury tourism sector for decades.</p></div>
-          <span class="source-tag">Jamaica Gleaner</span>
+          <span class="kicker">Mangroves</span>
+          <h3 class="headline small">Observer Investigation Flags "Real" Threat to Jamaica's Mangroves</h3>
+          <div class="body-text"><p>A Jamaica Observer investigation this week raised the alarm over what it described as the real threat to Jamaica's mangrove ecosystems — critical coastal buffers against storm surge and nurseries for marine life — warning that development pressures are accelerating habitat loss ahead of hurricane season.</p></div>
+          <span class="source-tag">Jamaica Observer, 15 June 2026</span>
         </div>
       </div>
     </div>
@@ -341,7 +407,7 @@
 
   <div class="footer-rule">
     <span>© The Jamaica Weekly 2026</span>
-    <span class="footer-center">Jamaica Observer · Jamaica Gleaner · JIS · IRIE FM · TVJ · Olympics.com</span>
+    <span class="footer-center">Jamaica Observer · Jamaica Gleaner · JIS · IRIE FM · TVJ · Olympics.com · Caribbean National Weekly</span>
     <span style="text-align:right;">Next edition: 22 June 2026</span>
   </div>
 
